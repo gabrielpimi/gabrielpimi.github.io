@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos iniciales del botón */
+        .boton {
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: transform 0.2s; /* Transición suave */
+        }
+    </style>
+    <script>
+        function cambiarGIF() {
+            var gif = document.getElementById("miGIF");
+            if (gif.src.includes("1.gif")) {
+                gif.src = "2.gif";
+            } 
+            else if (gif.src.includes("2.gif")) {
+                gif.src = "3.gif";
+            }
+            else if (gif.src.includes("3.gif")) {
+                gif.src = "4.gif";
+            }
+            else {
+                gif.src = "1.gif";
+            }
+        }
+
+        function cambiarGIF2() {
+            var gif = document.getElementById("miGIF");
+            gif.src = "5.gif";
+            var boton = document.getElementById("tx2");
+            var currentScale = boton.style.transform.replace(/[^0-9.-]/g, ''); // Obtener escala actual
+            currentScale = currentScale ? parseFloat(currentScale) : 1;
+            var newScale = currentScale*0; // Incrementar tamaño en 20%
+            boton.style.transform = `scale(${newScale})`; // Aplicar nueva escala
+            var boton = document.getElementById("tx");
+            var currentScale = boton.style.transform.replace(/[^0-9.-]/g, ''); // Obtener escala actual
+            currentScale = currentScale ? parseFloat(currentScale) : 1;
+            var newScale = currentScale*0; // Incrementar tamaño en 20%
+            boton.style.transform = `scale(${newScale})`; // Aplicar nueva escala
+            var boton = document.getElementById("tx3");
+            boton.innerHTML = "Gachas mvd muak♥♥♥";
+            var boton = document.getElementById("tx3");
+            var currentScale = boton.style.transform.replace(/[^0-9.-]/g, ''); // Obtener escala actual
+            currentScale = currentScale ? parseFloat(currentScale) : 1;
+            var newScale = currentScale + 1.2; // Incrementar tamaño en 20%
+            boton.style.transform = `scale(${newScale})`; // Aplicar nueva escala
+        }
+
+        function cambiarTexto() {
+            var boton = document.getElementById("tx");
+            if (boton.innerHTML === "No") {
+                boton.innerHTML = "Sé que quieres :b";
+            } 
+            else if (boton.innerHTML === "Sé que quieres :b") {
+                boton.innerHTML = "Porfa ;-;";
+            } 
+            else if (boton.innerHTML === "Porfa ;-;") {
+                boton.innerHTML = "Te wa a hacer feliz :3";
+            }
+        }
+
+        function aumentarTamaño() {
+            var boton = document.getElementById("tx");
+            var currentScale = boton.style.transform.replace(/[^0-9.-]/g, ''); // Obtener escala actual
+            currentScale = currentScale ? parseFloat(currentScale) : 1;
+            var newScale = currentScale + 0.2; // Incrementar tamaño en 20%
+            boton.style.transform = `scale(${newScale})`; // Aplicar nueva escala
+        }
+    </script>
+</head>
+<body>
+    <div id="tx3" class="texto"><h2>¿Quieres ser mi San Valentín?♥♥♥♥</h2></div>
+    <img id="miGIF" src="1.gif" alt="">
+    <div class="b">
+        <button id="tx2" class="v" onclick="cambiarGIF2()">Sí</button>
+        <button id="tx" class="boton r" onclick="cambiarGIF(); cambiarTexto(); aumentarTamaño();">No</button>
+    </div>
+</body>
+</html>
